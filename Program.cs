@@ -6,15 +6,16 @@ namespace UserRegistration
     {
         public static void Main(string[] args)
         {
-            String firstName,lastName;
+            String firstName,lastName,email;
             Console.WriteLine("Welcome to the Regex Implementation");
 
-            Regex regex = new Regex("^([A-Z]{1}[a-z]{1}[a-z]{1}([a-z]+))$");
+            Regex nameregex = new Regex("^([A-Z]{1}[a-z]{1}[a-z]{1}([a-z]+)?)$");
+            Regex emailregex = new Regex("^([^.][a-zA-Z0-9\\-]+)(.[a-z0-9]+)?@([a-zA-Z0-9\\-]+)\\.([a-z]{2,4})((.[a-z]{2,4})?)$");
 
             Console.WriteLine("Enter First Name");
             firstName = Console.ReadLine();
 
-            Match matchfname=regex.Match(firstName);
+            Match matchfname=nameregex.Match(firstName);
             if (matchfname.Success)
                 Console.WriteLine("match.value = " + matchfname.Value);
             else
@@ -23,12 +24,21 @@ namespace UserRegistration
             Console.WriteLine("Enter Last Name");
             lastName = Console.ReadLine();
 
-            Match matchlname = regex.Match(lastName);
+            Match matchlname = nameregex.Match(lastName);
             if (matchlname.Success)
                 Console.WriteLine("match.value = " + matchlname.Value);
             else
                 Console.WriteLine("Not Correct");
 
+
+            Console.WriteLine("Enter Email");
+            email = Console.ReadLine();
+
+            Match matchemail = emailregex.Match(email);
+            if (matchemail.Success)
+                Console.WriteLine("match.value = " + matchemail.Value);
+            else
+                Console.WriteLine("Not Correct");
 
         }
     }
