@@ -10,13 +10,11 @@ namespace UserRegistration
             
             Console.WriteLine("Welcome to the Regex Implementation");
 
-            //Regex nameregex = new Regex("^([A-Z]{1}[a-z]{1}[a-z]{1}([a-z]+)?)$");
-            //Regex emailregex = new Regex("^([^.][a-zA-Z0-9\\-]+)(.[a-z0-9]+)?@([a-zA-Z0-9\\-]+)\\.([a-z]{2,4})((.[a-z]{2,4})?)$");
-            //Regex mobileregex = new Regex("^([1-9]{2})(\\s)([0-9]{10})$");
+            Regex nameregex = new Regex("^([A-Z]{1}[a-z]{1}[a-z]{1}([a-z]+)?)$");
+            Regex emailregex = new Regex("^([^.][a-zA-Z0-9\\-]+)(.[a-z0-9]+)?@([a-zA-Z0-9\\-]+)\\.([a-z]{2,4})((.[a-z]{2,4})?)$");
+            Regex mobileregex = new Regex("^([1-9]{2})(\\s)([0-9]{10})$");
             Regex passwdregex = new Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
 
-
-            /*
             Console.WriteLine("Enter First Name");
             firstName = Console.ReadLine();
 
@@ -53,7 +51,7 @@ namespace UserRegistration
                 Console.WriteLine("match.value = " + matchmobile.Value);
             else
                 Console.WriteLine("Not Correct");
-            */
+            
 
             Console.WriteLine("Enter password");
             password = Console.ReadLine();
